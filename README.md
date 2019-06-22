@@ -16,3 +16,5 @@ Make sure Unity is allowed through your firewall.
 Make sure the FaceCap iOS app and the Unity project are connected to the same network.
 
 Enter your I.P. address in the Face Cap iOS app live mode.
+
+![Alt text](FaceCap.gif?raw=true "Hello there")

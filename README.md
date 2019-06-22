@@ -1,6 +1,8 @@
 # FaceCapOSCReceiverExample
 A Unity example project that received Face Cap data via OSC.
 
+http://www.bannaflak.com/face-cap/livemode.html
+
 Use Unity v2018.3.14f1 or newer.
 
 Add 'extOSC' via the Unity Asset store.

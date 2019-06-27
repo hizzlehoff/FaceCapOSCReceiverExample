@@ -246,13 +246,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.3.14f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -804,7 +804,10 @@
     <Compile Include="Assets\extOSC\Scripts\UI\OSCPad.cs" />
     <Compile Include="Assets\extOSC\Scripts\UI\OSCRotary.cs" />
     <Compile Include="Assets\extOSC\Scripts\UI\OSCSlider.cs" />
-    <Compile Include="Assets\Scripts\FaceCapOSCReceiver.cs" />
+    <Compile Include="Assets\Scripts\FaceCapData.cs" />
+    <Compile Include="Assets\Scripts\FaceCapObject.cs" />
+    <Compile Include="Assets\Scripts\FaceCapOSCReceiverCustom.cs" />
+    <Compile Include="Assets\Scripts\FaceCapOSCReceiverGeneric.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\extOSC\versions.txt" />

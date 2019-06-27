@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FaceCapGenericHeadOSCExample.unity
+- path: Assets/Scenes/FaceCapOSCReceiverCustomExample.unity
   isLoaded: 1
   isActive: 1

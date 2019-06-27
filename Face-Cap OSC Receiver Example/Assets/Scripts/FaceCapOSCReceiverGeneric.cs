@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace extOSC
 {
-    public class FaceCapOSCReceiver : MonoBehaviour
+    public class FaceCapOSCReceiverGeneric : MonoBehaviour
     {
         public Transform headTransform;
         public Transform eyeLTransform;

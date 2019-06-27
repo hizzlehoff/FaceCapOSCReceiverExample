@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace extOSC
 {
-
-    public class FaceCapOscReceiverRemapped : MonoBehaviour
+    public class FaceCapOSCReceiverCustom : MonoBehaviour
     {
         [SerializeField] public FaceCapObject faceCapRemapperObject;
 

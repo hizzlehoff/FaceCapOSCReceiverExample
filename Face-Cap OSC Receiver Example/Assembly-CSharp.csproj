@@ -241,22 +241,25 @@
     <Compile Include="Assets\extOSC\Scripts\UI\OSCPad.cs" />
     <Compile Include="Assets\extOSC\Scripts\UI\OSCRotary.cs" />
     <Compile Include="Assets\extOSC\Scripts\UI\OSCSlider.cs" />
-    <Compile Include="Assets\Scripts\FaceCapOSCReceiver.cs" />
+    <Compile Include="Assets\Scripts\FaceCapData.cs" />
+    <Compile Include="Assets\Scripts\FaceCapObject.cs" />
+    <Compile Include="Assets\Scripts\FaceCapOSCReceiverCustom.cs" />
+    <Compile Include="Assets\Scripts\FaceCapOSCReceiverGeneric.cs" />
     <None Include="Assets\extOSC\versions.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Projects/GitHub/FaceCap/Face-Cap OSC Receiver Example/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -455,15 +458,6 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Projects/Unity/Apps/Face-Cap OSC Receiver Example/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

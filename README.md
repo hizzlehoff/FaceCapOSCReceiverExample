@@ -5,7 +5,7 @@ http://www.bannaflak.com/face-cap/livemode.html
 
 Use Unity v2018.3.14f1 or newer.
 
-Add 'extOSC' via the Unity Asset store.
+If not included add the 'extOSC' package via the Unity Asset store.
 
 Open the scene "scenes/FaceCapGenericHeadOSCExample".
 
@@ -17,4 +17,4 @@ Make sure the FaceCap iOS app and the Unity project are connected to the same ne
 
 Enter your I.P. address in the Face Cap iOS app live mode.
 
-![Alt text](FaceCap.gif?raw=true "Hello there")
+![Alt text](FaceCap.gif?raw=true "Hello there.")

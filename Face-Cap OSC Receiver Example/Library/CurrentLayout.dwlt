@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 622}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 572}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 147
+  controlID: 109
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 572}
   m_MaxSize: {x: 4002, y: 12072}
   vertical: 1
-  controlID: 148
+  controlID: 110
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 911
     height: 286
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -267,8 +267,8 @@ MonoBehaviour:
     y: 0
     width: 653
     height: 452
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -12690
+  m_LastSelectedObjectID: 11312
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b2350000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6ae5ffffa6e5ffff94e7ffff20e8ffff
+      m_SelectedIDs: b8300000
+      m_LastClickedID: 12472
+      m_ExpandedIDs: 84f2ffff8cf3ffff30fbffffd6fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -854,9 +854,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9e360000
-    m_LastClickedID: 13982
-    m_ExpandedIDs: 00000000a635000000ca9a3b
+    m_SelectedIDs: d4280000
+    m_LastClickedID: 10452
+    m_ExpandedIDs: 00000000d427000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -884,7 +884,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000d4270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -915,18 +915,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 2eb70000bccaffffce0000008e1b00005a1c0000321c00000a1c0000c60400003e4000004440000050400000341e0000401f000068ddfbff6e79fbffa8230000c45e0100b87a0400a27a04008c7a040042220000384bf9ffb6270000081e0000a2070000165d01006c5f01002c1c0000fc04000026300000ea200000c02000009c1f0000f421000094200000221d0000f2ff060020920700281c0000fec2feffa80800005e1c0000ee070000ba0700000e05000010050000ba210000722200002e53faff9c630000a6630000a2f7fcff9263000014070000a2310000d6b9f2ff1405000028050000180500001a090000141c0000360500009a0b000016060000e0240000e2240000482200003e220000382200009a220000a42200006822000064220000ee2400001c250000222700002c270000f2280000f02800001a290000e6270000cc29000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: FaceCapOSCReceiverGenericExample
-      m_OriginalName: FaceCapOSCReceiverGenericExample
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13784
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:

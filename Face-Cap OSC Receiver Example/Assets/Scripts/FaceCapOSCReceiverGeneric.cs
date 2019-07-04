@@ -10,6 +10,10 @@ namespace extOSC
         public Transform eyeLTransform;
         public Transform eyeRTransform;
 
+        Matrix4x4 headMatrix;
+        Matrix4x4 eyeLMatrix;
+        Matrix4x4 eyeRMatrix;
+
         public SkinnedMeshRenderer blendshapesGeometry;
         int blendshapesCount = 0;
 
@@ -27,8 +31,39 @@ namespace extOSC
 
         protected virtual void Start()
         {
-            // Get the amount of available blendshapes.
-            if (blendshapesGeometry != null)
+            if (headTransform == null)
+            {
+                Debug.Log("Error: please assign the headTransform in the inspector.");
+            }
+            else
+            {
+                headMatrix = Matrix4x4.Rotate(headTransform.localRotation);
+            }
+
+            if (eyeLTransform == null)
+            {
+                Debug.Log("Error: please assign the eyeLTransform in the inspector.");
+            }
+            else
+            {
+                eyeLMatrix = Matrix4x4.Rotate(eyeLTransform.localRotation);
+            }
+
+            if (eyeRTransform == null)
+            {
+                Debug.Log("Error: please assign the eyeRTransform in the inspector.");
+            }
+            else
+            {
+                eyeRMatrix = Matrix4x4.Rotate(eyeRTransform.localRotation);
+            }
+
+
+            if (blendshapesGeometry == null)
+            {
+                Debug.Log("Error: please assign the skinnedMeshRenderer with blendshapes in the inspector.");
+            }
+            else
             {
                 blendshapesCount = blendshapesGeometry.sharedMesh.blendShapeCount;
 
@@ -40,11 +75,6 @@ namespace extOSC
                 }
 
                 Debug.Log(blendShapeNames);
-            }
-            else
-            {
-                Debug.Log("Error: please assign the skinnedMeshRenderer with blendshapes.");
-            }
 
             // Creating an OSC receiver.
             _OSCReceiver = gameObject.AddComponent<OSCReceiver>();
@@ -64,13 +94,16 @@ namespace extOSC
             _OSCReceiver.Bind(_RightEyeEulerAngles, RightEyeEulerAnglesReceived);
 
             _OSCReceiver.Bind(_Blendshapes, BlendshapeReceived);
+
+            }
         }
 
         protected void PositionReceived(OSCMessage message)
         {
             Vector3 value;
-            if (message.ToVector3(out value))
+            if (message.ToVector3(out value) && headTransform!=null)
             {
+                value.x *= -1;
                 headTransform.localPosition = value;
             }
         }
@@ -78,27 +111,30 @@ namespace extOSC
         protected void EulerAnglesReceived(OSCMessage message)
         {
             Vector3 value;
-            if (message.ToVector3(out value))
+            if (message.ToVector3(out value) && headTransform != null)
             {
-                ConvertEulerAnglesToUnitySpace(value, headTransform);
+                Matrix4x4 inMatrix = Matrix4x4.Rotate(ConvertEulerAnglesToUnitySpace(value));
+                headTransform.transform.localRotation = (inMatrix * headMatrix).rotation;
             }
         }
 
         protected void LeftEyeEulerAnglesReceived(OSCMessage message)
         {
             Vector2 value;
-            if (message.ToVector2(out value))
+            if (message.ToVector2(out value) && eyeLTransform != null)
             {
-                ConvertEulerAnglesToUnitySpace(new Vector3(value.x, value.y, 0), eyeLTransform);
+                Matrix4x4 inMatrix = Matrix4x4.Rotate(ConvertEulerAnglesToUnitySpace(new Vector3(value.x, value.y, 0)));
+                eyeLTransform.transform.localRotation = (inMatrix * eyeLMatrix).rotation;
             }
         }
 
         protected void RightEyeEulerAnglesReceived(OSCMessage message)
         {
             Vector2 value;
-            if (message.ToVector2(out value))
+            if (message.ToVector2(out value) && eyeRTransform != null)
             {
-                ConvertEulerAnglesToUnitySpace(new Vector3(value.x,value.y,0), eyeRTransform);
+                Matrix4x4 inMatrix = Matrix4x4.Rotate(ConvertEulerAnglesToUnitySpace(new Vector3(value.x, value.y, 0)));
+                eyeRTransform.transform.localRotation = (inMatrix * eyeRMatrix).rotation;
             }
         }
 
@@ -116,10 +152,10 @@ namespace extOSC
             }
         }
 
-        protected void ConvertEulerAnglesToUnitySpace(Vector3 eulerAngles, Transform t)
+        protected Quaternion ConvertEulerAnglesToUnitySpace(Vector3 eulerAngles)
         {
-            t.localEulerAngles = eulerAngles;
-            t.localRotation = new Quaternion(-t.localRotation.x, t.localRotation.y, t.localRotation.z, -t.localRotation.w);
+            Quaternion q = Quaternion.Euler(eulerAngles);
+            return new Quaternion(-q.x, q.y, q.z, -q.w);
         }
 
     }

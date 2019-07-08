@@ -62,8 +62,10 @@ public class FaceCapObjectEditor : Editor
                         "mouthStretch_L",
                         "mouthStretch_R",
                         "tongueOut",
-                        "No input selected:"
+                        "no input selected"
                         };
+
+    string[] outputNames;
 
     public override void OnInspectorGUI()
     {
@@ -73,13 +75,13 @@ public class FaceCapObjectEditor : Editor
 
         if (faceCapObject.sMR == null)
         {
-            EditorGUILayout.HelpBox(new GUIContent("Please assign a SkinnedMeshRenderer from your assets/."));
+            EditorGUILayout.HelpBox(new GUIContent("Please assign a SkinnedMeshRenderer from your assets."));
             return;
         }
 
         // Get output blendshape names:
 
-        string[] outputNames = new string[faceCapObject.sMR.sharedMesh.blendShapeCount];
+        outputNames = new string[faceCapObject.sMR.sharedMesh.blendShapeCount];
 
         for (int i = 0; i < outputNames.Length; i++)
         {
@@ -90,12 +92,7 @@ public class FaceCapObjectEditor : Editor
 
         if (faceCapObject.data.Count < 1)
         {
-            // Todo: If the amount of blendshapes is updated outside of Unity how to deal with it?
-
-            for (int i = 0; i < outputNames.Length; i++)
-            {
-                faceCapObject.AddData(inputNames.Length - 1, 1);
-            }
+            InitFaceCapObject();
         }
 
         EditorGUILayout.Space();
@@ -137,7 +134,18 @@ public class FaceCapObjectEditor : Editor
         EditorGUILayout.BeginVertical(EditorStyles.helpBox);
         EditorGUILayout.BeginHorizontal();
 
-        EditorGUILayout.LabelField(new GUIContent("Use 'save project' to save this configuration."));
+        EditorGUILayout.LabelField(new GUIContent("*** Use 'save project' to save this configuration! ***"));
+
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
+
+        EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+        EditorGUILayout.BeginHorizontal();
+
+        if (GUILayout.Button("Reset this FaceCap Remapping Object."))
+        {
+            InitFaceCapObject();
+        }
 
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndVertical();
@@ -173,6 +181,21 @@ public class FaceCapObjectEditor : Editor
         int inputIndex = int.Parse(inpuString.Split('.')[1]);
 
         faceCapObject.data[dataIndex].inputIndex = inputIndex;
+    }
+
+    private void InitFaceCapObject()
+    {
+        // Todo: If the amount of blendshapes is updated outside of Unity how to deal with it?
+
+        if (outputNames.Length > 0)
+        {
+            faceCapObject.data.Clear();
+
+            for (int i = 0; i < outputNames.Length; i++)
+            {
+                faceCapObject.AddData(inputNames.Length - 1, 1);
+            }
+        }
     }
 
 }

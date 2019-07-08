@@ -18,6 +18,7 @@ namespace extOSC
         int blendshapesCount = 0;
 
         public bool usePositionData = true;
+        public bool useOrientationData = true;
 
         public int _OSCReceiverPort = 8080;
 
@@ -88,7 +89,10 @@ namespace extOSC
                 _OSCReceiver.Bind(_Position, PositionReceived);
             }
 
-            _OSCReceiver.Bind(_EulerAngles, EulerAnglesReceived);
+            if (useOrientationData)
+            {
+                _OSCReceiver.Bind(_EulerAngles, EulerAnglesReceived);
+            }
 
             _OSCReceiver.Bind(_LeftEyeEulerAngles, LeftEyeEulerAnglesReceived);
             _OSCReceiver.Bind(_RightEyeEulerAngles, RightEyeEulerAnglesReceived);

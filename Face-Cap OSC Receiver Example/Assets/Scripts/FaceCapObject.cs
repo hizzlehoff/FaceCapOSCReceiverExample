@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FaceCapRemappingObject", menuName = "Create FaceCap Remapping Object")]
 public class FaceCapObject : ScriptableObject
 {
-    [SerializeField] public List<FaceCapData> data = new List<FaceCapData>();
+    [HideInInspector] [SerializeField] public List<FaceCapData> data = new List<FaceCapData>();
     [SerializeField] public SkinnedMeshRenderer sMR;
 
     public void AddData(int inputIndex, float multiplier)

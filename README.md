@@ -3,7 +3,7 @@ A Unity example project that received Face Cap data via OSC.
 
 http://www.bannaflak.com/face-cap/livemode.html
 
-Use Unity v2018.3.14f1 or newer.
+Use Unity v2019.3.0f3 or newer.
 
 If not included add the 'extOSC' package via the Unity Asset store.
 
@@ -13,7 +13,7 @@ Click on the "Scripts" gameObject to set up your port.
 
 Make sure Unity is allowed through your firewall.
 
-Make sure the FaceCap iOS app and the Unity project are connected to the same network.
+Make sure the FaceCap iOS app and the Unity project are connected to the same wifi network.
 
 Enter your I.P. address in the Face Cap iOS app live mode.
 

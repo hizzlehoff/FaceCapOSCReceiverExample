@@ -39,7 +39,7 @@ public class FaceCapLiveModeReceiver : MonoBehaviour
     [SerializeField]
     public Transform neckTransform;
     [SerializeField]
-    public float neckTransformBlendFactor = 0.5f;
+    public float neckTransformBlendFactor = 0.66f;
     Quaternion neckRotationInitial;
     Quaternion neckRotationOffset;
 
@@ -48,7 +48,7 @@ public class FaceCapLiveModeReceiver : MonoBehaviour
     [SerializeField]
     public Transform spineTransform;
     [SerializeField]
-    public float spineTransformBlendFactor = 0.25f;
+    public float spineTransformBlendFactor = 0.33f;
     Quaternion spineRotationInitial;
     Quaternion spineRotationOffset;
 
@@ -217,14 +217,12 @@ public class FaceCapLiveModeReceiver : MonoBehaviour
             if (spineTransformEnabled)
             {
                 Quaternion newRotation = sceneKitRotation * spineRotationOffset;
-
-                spineTransform.rotation = Quaternion.Lerp(spineRotationInitial,newRotation, spineTransformBlendFactor);
+                spineTransform.rotation = Quaternion.Lerp(spineRotationInitial, newRotation, spineTransformBlendFactor);
             }
 
             if (neckTransformEnabled)
             {
                 Quaternion newRotation = sceneKitRotation * neckRotationOffset;
-
                 neckTransform.rotation = Quaternion.Lerp(neckRotationInitial, newRotation, neckTransformBlendFactor);
             }
 

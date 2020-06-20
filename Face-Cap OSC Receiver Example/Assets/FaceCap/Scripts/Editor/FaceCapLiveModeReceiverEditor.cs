@@ -22,54 +22,128 @@ public class FaceCapLiveModeReceiverEditor : Editor
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
-        script.blendshapeMesh = EditorGUILayout.ObjectField("Blendshape Mesh", script.blendshapeMesh, typeof(GameObject), true) as GameObject;
+        GameObject blendshapeMesh = script.blendshapeMesh;
+
+        blendshapeMesh = EditorGUILayout.ObjectField("Blendshape Mesh", blendshapeMesh, typeof(GameObject), true) as GameObject;
+
+        if (blendshapeMesh != script.blendshapeMesh)
+        {
+            script.blendshapeMesh = blendshapeMesh;
+            EditorUtility.SetDirty(script);
+        }
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
-        script.usePositionData = EditorGUILayout.Toggle("Use Position Data", script.usePositionData);
-        script.useRotationData = EditorGUILayout.Toggle("Use Rotation Data", script.useRotationData);
+        bool usePositionData = script.usePositionData;
+        bool useRotationData = script.useRotationData;
 
-        if (script.usePositionData || script.useRotationData)
+        usePositionData = EditorGUILayout.Toggle("Use Position Data", usePositionData);
+        useRotationData = EditorGUILayout.Toggle("Use Rotation Data", useRotationData);
+
+        if (usePositionData != script.usePositionData || useRotationData != script.useRotationData)
+        {
+            script.usePositionData = usePositionData;
+            script.useRotationData = useRotationData;
+            EditorUtility.SetDirty(script);
+        }
+
+        if (usePositionData || useRotationData)
         {
             EditorGUILayout.Space();
 
-            script.headTransform = EditorGUILayout.ObjectField("Head Transform", script.headTransform, typeof(Transform), true) as Transform;
+            Transform headTransform = script.headTransform;
 
-            script.neckTransformEnabled = EditorGUILayout.Toggle("Neck", script.neckTransformEnabled);
-            if (script.neckTransformEnabled)
+            headTransform = EditorGUILayout.ObjectField("Head Transform", headTransform, typeof(Transform), true) as Transform;
+            if (headTransform != script.headTransform)
             {
-                script.neckTransform = EditorGUILayout.ObjectField("Neck Transform", script.neckTransform, typeof(Transform), true) as Transform;
-                script.neckTransformBlendFactor = EditorGUILayout.FloatField("Neck Blend", script.neckTransformBlendFactor);
+                script.headTransform = headTransform;
+                EditorUtility.SetDirty(script);
             }
 
-            script.spineTransformEnabled = EditorGUILayout.Toggle("Spine", script.spineTransformEnabled);
-            if (script.spineTransformEnabled)
+            bool neckTransformEnabled = script.neckTransformEnabled;
+            neckTransformEnabled = EditorGUILayout.Toggle("Neck", neckTransformEnabled);
+            if (neckTransformEnabled != script.neckTransformEnabled)
             {
-                script.spineTransform = EditorGUILayout.ObjectField("Spine Transform", script.spineTransform, typeof(Transform), true) as Transform;
-                script.spineTransformBlendFactor = EditorGUILayout.FloatField("Spine Blend", script.spineTransformBlendFactor);
+                script.neckTransformEnabled = neckTransformEnabled;
+                EditorUtility.SetDirty(script);
+            }
+
+            if (neckTransformEnabled)
+            {
+                Transform neckTransform = script.neckTransform;
+                float neckTransformBlendFactor = script.neckTransformBlendFactor;
+
+                neckTransform = EditorGUILayout.ObjectField("Neck Transform", neckTransform, typeof(Transform), true) as Transform;
+                neckTransformBlendFactor = EditorGUILayout.FloatField("Neck Blend", neckTransformBlendFactor);
+
+                if (neckTransform != script.neckTransform || neckTransformBlendFactor != script.neckTransformBlendFactor)
+                {
+                    script.neckTransform = neckTransform;
+                    script.neckTransformBlendFactor = neckTransformBlendFactor;
+                    EditorUtility.SetDirty(script);
+                }
+            }
+
+            bool spineTransformEnabled = script.spineTransformEnabled;
+            spineTransformEnabled = EditorGUILayout.Toggle("Spine", spineTransformEnabled);
+            if (spineTransformEnabled != script.spineTransformEnabled)
+            {
+                script.spineTransformEnabled = spineTransformEnabled;
+                EditorUtility.SetDirty(script);
+            }
+
+            if (spineTransformEnabled)
+            {
+                Transform spineTransform = script.spineTransform;
+                float spineTransformBlendFactor = script.spineTransformBlendFactor;
+
+                spineTransform = EditorGUILayout.ObjectField("Spine Transform", spineTransform, typeof(Transform), true) as Transform;
+                spineTransformBlendFactor = EditorGUILayout.FloatField("Spine Blend", spineTransformBlendFactor);
+
+                if (spineTransform != script.spineTransform || spineTransformBlendFactor != script.spineTransformBlendFactor)
+                {
+                    script.spineTransform = spineTransform;
+                    script.spineTransformBlendFactor = spineTransformBlendFactor;
+                    EditorUtility.SetDirty(script);
+                }
             }
         }
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
-        script.useEyeDirectionData = EditorGUILayout.Toggle("Use Eye Direction Data", script.useEyeDirectionData);
+        bool useEyeDirectionData = script.useEyeDirectionData;
+        useEyeDirectionData = EditorGUILayout.Toggle("Use Eye Direction Data", useEyeDirectionData);
+        if (useEyeDirectionData != script.useEyeDirectionData)
+        {
+            script.useEyeDirectionData = useEyeDirectionData;
+            EditorUtility.SetDirty(script);
+        }
 
-        
-        if (script.useEyeDirectionData)
+        if (useEyeDirectionData)
         {
             EditorGUILayout.Space();
 
-            script.leftEyeTransform = EditorGUILayout.ObjectField("Left Eye Transform", script.leftEyeTransform, typeof(Transform), true) as Transform;
-            script.rightEyeTransform = EditorGUILayout.ObjectField("Right Eye Transform", script.rightEyeTransform, typeof(Transform), true) as Transform;
+            Transform leftEyeTransform = script.leftEyeTransform;
+            Transform rightEyeTransform = script.rightEyeTransform;
+
+            leftEyeTransform = EditorGUILayout.ObjectField("Left Eye Transform", leftEyeTransform, typeof(Transform), true) as Transform;
+            rightEyeTransform = EditorGUILayout.ObjectField("Right Eye Transform", rightEyeTransform, typeof(Transform), true) as Transform;
+
+            if (leftEyeTransform != script.leftEyeTransform || rightEyeTransform != script.rightEyeTransform)
+            {
+                script.leftEyeTransform = leftEyeTransform;
+                script.rightEyeTransform = rightEyeTransform;
+                EditorUtility.SetDirty(script);
+            }
         }
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
         EditorGUILayout.LabelField("Blendshape configuration:");
 
-        if (script.blendshapeMesh != null)
+        if (blendshapeMesh != null)
         {
-            SkinnedMeshRenderer smr = script.blendshapeMesh.GetComponent<SkinnedMeshRenderer>();
+            SkinnedMeshRenderer smr = blendshapeMesh.GetComponent<SkinnedMeshRenderer>();
             if (!smr)
             {
                 GUILayout.BeginHorizontal(EditorStyles.helpBox);
@@ -86,31 +160,55 @@ public class FaceCapLiveModeReceiverEditor : Editor
                 return;
             }
 
-            if (script.blendShapeIndexes == null)
+            int[] blendShapeIndexes = script.blendShapeIndexes;
+
+            if (blendShapeIndexes == null)
             {
-                InitializeBlendshapes(script, smr);
-                AutoConfigureBlendshapes(script, smr);
+                blendShapeIndexes = InitializeBlendshapes(smr);
+                blendShapeIndexes = AutoConfigureBlendshapes(smr);
+
+                if (blendShapeIndexes != script.blendShapeIndexes)
+                {
+                    script.blendShapeIndexes = blendShapeIndexes;
+                    EditorUtility.SetDirty(script);
+                }
             }
 
-            for (int i = 0; i < script.blendShapeIndexes.Length; i++)
+            for (int i = 0; i < blendShapeIndexes.Length; i++)
             {
                 GUILayout.BeginHorizontal(EditorStyles.label);
                 string blendShapeName = smr.sharedMesh.GetBlendShapeName(i);
-                script.blendShapeIndexes[i] = EditorGUILayout.Popup(blendShapeName, script.blendShapeIndexes[i], faceCapBlendshapeNames);
+                blendShapeIndexes[i] = EditorGUILayout.Popup(blendShapeName, blendShapeIndexes[i], faceCapBlendshapeNames);
+
+                if (blendShapeIndexes[i] != script.blendShapeIndexes[i])
+                {
+                    script.blendShapeIndexes[i] = blendShapeIndexes[i];
+                    EditorUtility.SetDirty(script);
+                }
+
                 GUILayout.EndHorizontal();
             }
 
             GUILayout.BeginHorizontal(EditorStyles.helpBox);
             if (GUILayout.Button("Initialize"))
             {
-                InitializeBlendshapes(script, smr);
+                blendShapeIndexes = InitializeBlendshapes(smr);
+                if (blendShapeIndexes != script.blendShapeIndexes)
+                {
+                    script.blendShapeIndexes = blendShapeIndexes;
+                    EditorUtility.SetDirty(script);
+                }
             }
             if (GUILayout.Button("Automatic"))
             {
-                AutoConfigureBlendshapes(script, smr);
+                blendShapeIndexes = AutoConfigureBlendshapes(smr);
+                if (blendShapeIndexes != script.blendShapeIndexes)
+                {
+                    script.blendShapeIndexes = blendShapeIndexes;
+                    EditorUtility.SetDirty(script);
+                }
             }
             GUILayout.EndHorizontal();
-
         }
         else
         {
@@ -121,25 +219,25 @@ public class FaceCapLiveModeReceiverEditor : Editor
         }
 
         EditorGUILayout.Space();
-
-        EditorUtility.SetDirty(script);
     }
 
-    void InitializeBlendshapes(FaceCapLiveModeReceiver script, SkinnedMeshRenderer smr)
+    int[] InitializeBlendshapes(SkinnedMeshRenderer smr)
     {
-        script.blendShapeIndexes = new int[smr.sharedMesh.blendShapeCount];
+        int[] blendShapeIndexes = new int[smr.sharedMesh.blendShapeCount];
 
-        for (int i = 0; i < script.blendShapeIndexes.Length; i++)
+        for (int i = 0; i < blendShapeIndexes.Length; i++)
         {
-            script.blendShapeIndexes[i] = faceCapBlendshapeNames.Length - 1;
+            blendShapeIndexes[i] = faceCapBlendshapeNames.Length - 1;
         }
+
+        return blendShapeIndexes;
     }
 
-    void AutoConfigureBlendshapes(FaceCapLiveModeReceiver script, SkinnedMeshRenderer smr)
+    int[] AutoConfigureBlendshapes(SkinnedMeshRenderer smr)
     {
-        script.blendShapeIndexes = new int[smr.sharedMesh.blendShapeCount];
+        int[] blendShapeIndexes = new int[smr.sharedMesh.blendShapeCount];
 
-        for (int i = 0; i < script.blendShapeIndexes.Length; i++)
+        for (int i = 0; i < blendShapeIndexes.Length; i++)
         {
             string name = smr.sharedMesh.GetBlendShapeName(i);
 
@@ -147,10 +245,11 @@ public class FaceCapLiveModeReceiverEditor : Editor
             {
                 if (name.Contains(faceCapBlendshapeNames[j]) || name.Contains(polywinkBlendshapeNames[j]))
                 {
-                    script.blendShapeIndexes[i] = j;
+                    blendShapeIndexes[i] = j;
                 }
             }
         }
-
+        return blendShapeIndexes;
     }
+
 }

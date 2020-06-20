@@ -401,11 +401,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1065436761 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400008, guid: fef19726298929c4db687baf13f7c42e,
+  m_CorrespondingSourceObject: {fileID: 400010, guid: fef19726298929c4db687baf13f7c42e,
     type: 3}
   m_PrefabInstance: {fileID: 1065436759}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1065436762
+--- !u!1 &1065436762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100012, guid: fef19726298929c4db687baf13f7c42e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1065436759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1065436763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -418,40 +424,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _OSCReceiverPort: 9000
-  blendshapeMesh: {fileID: 1065436763}
+  blendshapeMesh: {fileID: 1065436762}
   blendShapeIndexes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f00000030000000310000003200000033000000
   smr: {fileID: 0}
   usePositionData: 1
   useRotationData: 1
-  headTransform: {fileID: 1065436765}
-  headTransformBlendFactor: 1
+  headTransform: {fileID: 1065436761}
+  headRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   neckTransformEnabled: 0
   neckTransform: {fileID: 0}
-  neckTransformBlendFactor: 0.33
+  neckTransformBlendFactor: 0.5
   spineTransformEnabled: 0
   spineTransform: {fileID: 0}
-  spineTransformBlendFactor: 0.175
-  useEyeDirectionData: 1
-  leftEyeTransform: {fileID: 1065436764}
-  rightEyeTransform: {fileID: 1065436761}
---- !u!1 &1065436763 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100012, guid: fef19726298929c4db687baf13f7c42e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065436759}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1065436764 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400006, guid: fef19726298929c4db687baf13f7c42e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065436759}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1065436765 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400010, guid: fef19726298929c4db687baf13f7c42e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065436759}
-  m_PrefabAsset: {fileID: 0}
+  spineTransformBlendFactor: 0.25
+  useEyeDirectionData: 0
+  leftEyeTransform: {fileID: 0}
+  rightEyeTransform: {fileID: 0}
 --- !u!1 &2041961708
 GameObject:
   m_ObjectHideFlags: 0
